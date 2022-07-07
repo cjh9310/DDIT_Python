@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function mysubmit(){
+	var obj = document.querySelector("#myit");
+	if(obj.value == ""){
+		alert("아이디를 입력하세요");
+		obj.focus();
+		return;
+	}
+	document.querySelector("#frm").submit();
+	// 유효성체크. 
+}
+
+</script>
+</head>
+<body>
+<form id="frm" action="http://www.daum.net">
+<input type="text" id="myit"/>
+<input type="button" value="전송" onclick="mysubmit()" />
+</form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.it{
+	width: 30px;
+}
+</style>
+<script>
+function result() {
+	
+	var me = document.getElementsByClassName("it")[0].value;
+	var com=Math.random();
+	var com1 ="";
+	result = "";
+	if(com >0.3){
+		com1="가위";
+	}else if (com>0.66) {
+		com1 ="바위";
+	}else {
+		com1="보";
+	}
+	if(com1==me){
+		result="비김";
+	}else if (com1=="가위"&& me=="바위"| com1=="바위" && me=="보"| com1=="보" && me=="가위"){
+		result="이김"
+	}else {
+		result= "패배"
+	}
+	document.getElementById('itCom').value = com1;
+	
+	document.getElementById('itResult').value = result;
+	
+}
+
+
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>나:</td>
+		<td>
+			<input type="text"  class="it" id="itMine" />
+		</td>
+	</tr>
+	<tr>
+		<td>컴:</td>
+		<td>
+			<input type="text" class="it" id="itCom" />
+		</td>
+	</tr>
+	<tr>
+		<td>결과:</td>
+		<td>
+			<input type="text" class="it" id="itResult" />
+		</td>
+	<tr>
+		<td colspan="2">
+			<input type="button" style="width: 100%" value="게임하기" onclick = "result()"/>
+		</td>
+
+	</tr>
+
+</table>
+</body>
+</html>

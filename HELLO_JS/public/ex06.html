@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+function result(){
+	var arr45=[];
+	var arr6 = [];   // 6개 추출 
+	for(var i=1; i<=45; i++){
+		arr45.push(i);
+	}
+	
+	for(var i=0; i<6; i++){
+		var rnd=parseInt(Math.random()*arr45.length);
+		arr6.push(arr[rnd]);
+		arr45.splice(rnd,1); // index 2 부터 1개의 요소('c')를 제거
+		// splice는 두 가지(추가,제거)의 기능이 있는데
+		// 추가는 찾아봐...
+		
+	}
+	
+	
+	console.log(arr45);
+	console.log(arr6);
+	
+	var objs = document.querySelectorAll(".mydiv");
+	objs[0].innerHTML = arr6[0];
+	objs[1].innerHTML = arr6[1];
+	objs[2].innerHTML = arr6[2];
+	objs[3].innerHTML = arr6[3];
+	objs[4].innerHTML = arr6[4];
+	objs[5].innerHTML = arr6[5];
+	
+}
+
+</script>
+<body>
+<table border="1px">
+	<tr>	
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+	</tr>
+	<tr>	
+		<td colspan="6">
+			<input type="button" value="로또생성하기"  style="width: 100%" onclick="result()">
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

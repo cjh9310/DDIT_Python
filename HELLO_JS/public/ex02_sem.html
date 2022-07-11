@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick() {
+	var obj = document.querySelector("#it");
+	var a = parseInt(obj.value);
+	a--;
+	obj.value = a;     
+// value는 문자 a는 숫자  형태가 달라도 자바스크립트는 자동으로 형변환해줌  결과값에 나온 a는 문자열로 출력
+}
+
+</script>
+
+</head>
+<body>
+<input type="text" id="it" value="500">
+<input type="button"value="decrease" onclick="myclick()">
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+function result(){
+	var ran = Math.floor(Math.random()*45)+1;
+	var ran1 = Math.floor(Math.random()*45)+1;
+	var ran2= Math.floor(Math.random()*45)+1;
+	var ran3 = Math.floor(Math.random()*45)+1;
+	var ran4 = Math.floor(Math.random()*45)+1;
+	var ran5 = Math.floor(Math.random()*45)+1;
+	console.log(ran);
+	document.getElementsByClassName("mydiv")[0].innerHTML = ran;
+	document.getElementsByClassName("mydiv")[1].innerHTML = ran1;
+	document.getElementsByClassName("mydiv")[2].innerHTML = ran2;
+	document.getElementsByClassName("mydiv")[3].innerHTML = ran3;
+	document.getElementsByClassName("mydiv")[4].innerHTML = ran4;
+	document.getElementsByClassName("mydiv")[5].innerHTML = ran5;
+	
+	
+	
+	
+}
+
+</script>
+<body>
+<table border="1px">
+	<tr>	
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+		<td><div class="mydiv">__</div></td>
+	</tr>
+	<tr>	
+		<td colspan="6">
+			<input type="button" value="로또생성하기"  style="width: 100%" onclick="result()">
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick(e){
+	var str_new = e.target.value; //event.target은 이벤트가 발생한 요소를 반환해준다. 
+	var str_old = document.querySelector("#it").value; // 기존값 선언 후 
+	document.querySelector("#it").value = str_old + str_new; // 합치고 기존값으로 설정
+}
+
+function mycall(){
+	var str_tel = document.querySelector("#it").value;
+	alert("calling\n"+str_tel);
+}
+
+</script>
+<style type="text/css">
+.btn{
+	width: 100%;
+}
+
+
+</style>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td colspan="3">
+			<input type="text" style="width: 100px;text-align: right;" id="it" />
+		</td>	
+	</tr>
+	<tr>
+		<td>
+			<input type="button" class="btn" value="1" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="2" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="3" onclick="myclick(event)" />
+		</td>	
+	</tr>
+	<tr>
+		<td>
+			<input type="button" class="btn" value="4" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="5" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="6" onclick="myclick(event)" />
+		</td>	
+	</tr>
+	<tr>
+		<td>
+			<input type="button" class="btn" value="7" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="8" onclick="myclick(event)" />
+		</td>
+		<td>
+			<input type="button" class="btn" value="9" onclick="myclick(event)" />
+		</td>	
+	</tr>
+	<tr>
+		<td>
+			<input type="button" class="btn" value="0" onclick="myclick(event)" />
+		</td>
+		<td colspan="2">
+			<input type="button" class="btn" value="call" onclick="mycall()" />
+		</td>	
+	</tr>
+</table>
+</body>
+</html>

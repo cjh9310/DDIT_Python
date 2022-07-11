@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.it{
+	width: 30px;
+}
+</style> 
+<script>
+function result() {
+	var first1 = document.getElementsByClassName("it")[0].value;
+	var last1 = document.getElementsByClassName("it")[1].value;
+	first = parseInt(first1);
+	last = parseInt(last1);
+	star = "*";
+	next = "<br/>";  // 보통의 <br> 보다 <br/>이 더 좋다고 한다.  
+	                 // br을 열고 닫는다. <br></br>이 합친 것
+	for (let i = first; i <= last; i++) {
+		  for (let j = first; j <= i; j++) {
+			  document.getElementById("mydiv").innerHTML+=star;
+		  }
+		  document.getElementById("mydiv").innerHTML+=next;
+		}
+	
+	
+	
+}
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫별수:</td>
+		<td>
+			<input type="text" class="it" id="it_first" />
+		</td>
+	</tr>
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="text" class="it" id="it_last" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" style="width: 100%" value="별출력하기" onclick="result()"/>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 200px;" colspan="2">
+			<div id="mydiv"></div>
+		</td>
+	</tr>	
+	
+	
+</table>
+
+</body>
+</html>

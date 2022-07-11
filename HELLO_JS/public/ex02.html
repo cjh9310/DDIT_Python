@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function decrease() {
+	var text = document.getElementById("it"); // 폼 선택
+
+	text_val = parseInt(it.value); // 폼 값을 숫자열로 변환
+
+	text_val -= 1; // 계산
+
+	text.value = text_val; // 계산된 값을 바꾼다
+}
+</script>
+</head>
+<body>
+<input type="text" id="it" value="500">
+<input type="button"value="decrease" onclick="decrease()">
+
+</body>
+</html>

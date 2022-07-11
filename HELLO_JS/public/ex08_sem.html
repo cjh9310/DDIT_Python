@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick(){
+	var a = document.querySelector("#it_first").value;
+	var b = document.querySelector("#it_last").value;
+	var aa = parseInt(a);
+	var bb = parseInt(b);
+	
+	var txt = "";
+	
+	/* txt += drawStar(1);
+	txt += drawStar(2);  실험.*/
+	for(var i=aa; i<=bb; i++){
+		txt += drawStar(i);
+	}
+	
+	
+	
+	document.querySelector("#mydiv").innerHTML = txt;
+	
+}
+function drawStar(cnt) {
+	var ret = "";
+	for(var i=0; i<cnt; i++){
+		ret += "*";
+	}
+	ret +="<br/>";  
+	return ret;
+}
+
+</script>
+<style type="text/css">
+.it{
+	width: 30px;
+}
+</style>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫별수:</td>
+		<td>
+			<input type="text" class="it" id="it_first" />
+		</td>
+	</tr>
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="text" class="it" id="it_last" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" onclick="myclick()" style="width: 100%" value="별출력하기" />
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 200px;" colspan="2">
+			<div id="mydiv"></div>
+		</td>
+	</tr>	
+	
+	
+</table>
+
+</body>
+</html>

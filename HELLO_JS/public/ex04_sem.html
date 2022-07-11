@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick(){
+	var objDan = document.querySelector("#it");
+	var objTd = document.querySelector("#mytd"); 
+	
+	var idan = parseInt(objDan.value);
+	
+	var txt = "";
+	
+	txt += idan+"*"+1+"="+(idan*1)+"<br>";
+	txt += idan+"*"+2+"="+(idan*2)+"<br>";
+	txt += idan+"*"+3+"="+(idan*3)+"<br>";
+	txt += idan+"*"+4+"="+(idan*4)+"<br>";
+	txt += idan+"*"+5+"="+(idan*5)+"<br>";
+
+	txt += idan+"*"+6+"="+(idan*6)+"<br>";
+	txt += idan+"*"+7+"="+(idan*7)+"<br>";
+	txt += idan+"*"+8+"="+(idan*8)+"<br>";
+	txt += idan+"*"+9+"="+(idan*9)+"<br>";
+	
+	objTd.innerHTML = txt;
+}
+
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>출력단수</td>
+		<td> 
+			<input type="text" id="it" style="width: 30px" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" onclick="myclick()" style="width: 100%" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" id="mytd" style="height: 200px">
+			&nbsp;
+		</td>
+	</tr>
+
+</table>
+
+
+</body>
+</html>

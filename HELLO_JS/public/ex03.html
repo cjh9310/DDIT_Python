@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.it{
+	width : 20px;
+}
+
+</style>
+<script>
+function result() {
+	var x = document.getElementsByClassName("it")[0];
+	var y = document.getElementsByClassName("it")[1];
+	
+	
+	document.getElementsByClassName("it")[2].value = 
+		parseInt(x.value)+parseInt(y.value);
+	
+	
+}
+</script>
+</head>
+<body>
+<input type="text" class="it" >
++
+<input type="text" class="it" >
+<input type="button" value="=" onclick="result()">
+<input type="text" class="it" >
+
+</body>
+</html>

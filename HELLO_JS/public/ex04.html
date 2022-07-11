@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function result(){
+	var x = document.getElementById("it");
+	var dan = parseInt(x.value);
+	var num;
+	var result = dan*num;
+	var text="";
+	for(num=1; num<=9; num++){
+		text +=dan+'*'+num+'='+result+"<br>";
+		
+		
+	}
+	mytd.innerHTML = text;
+	
+}
+	
+
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>출력단수</td>
+		<td>
+			<input type="text" id="it" style="width:30px">
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" style="width:100%" onclick="result()">
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" id="mytd" style="height:200px;">
+			&nbsp;
+		</td>
+	</tr>
+
+</table>
+</body>
+</html>

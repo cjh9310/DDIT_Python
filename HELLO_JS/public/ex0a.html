@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+input[type=text]{
+	width : 20px;
+}
+</style>
+<script>
+function result() {
+	var num1 = document.getElementById("it_a");
+	var x = parseInt(num1.value);
+	var num2 = document.getElementById("it_b");
+	var y = parseInt(num2.value);
+	var num3 = document.getElementById("it_c");
+	var z = parseInt(num3.value);
+	var sum=0; // 0 선언을 안해서 nan이 떳음
+	for(var i=x; i<=y; i++) {
+		if(i % z ==0){
+			sum += i;
+		}
+	}
+
+	
+	document.getElementById('it_d').value = sum;
+}
+
+
+</script>
+</head>
+<body>
+<input type="text" id="it_a" />에서
+<input type="text" id="it_b" />까지
+<input type="text" id="it_c" />
+<input type="button" value="배수의 합은" onclick="result()"/>
+<input type="text" id="it_d" />
+</body>
+</html>

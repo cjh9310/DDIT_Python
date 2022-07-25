@@ -5,13 +5,17 @@ from keras import layers
 from keras.utils import to_categorical
 from tensorboard.compat import tf
 import numpy as np
-from PIL import Image
+import cv2
+
+img = cv2.imread('0_0_1.png')
+train_images = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+train_images = train_images.reshape((1,784))
+print(train_images[:1].shape)    # [:1]이 없을때 (28, 28)     /  [:1]이 있으면 (1, 28)
 
 model = tf.keras.models.load_model('mnist.h5')
 
-img = Image.open("0_0_1.png").convert("L") #L(256단계 흑백이미지)로 변환
-test_data = ((np.array(img) / 255) - 1) * -1
+predicted_result = model.predict(train_images)
 
-predicted_result = model.predict(test_data)
-print("predicted_result",predicted_result)
+ai_answer = np.argmax(predicted_result[0])
+print("ai_answer",ai_answer)
 

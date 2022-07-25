@@ -52,7 +52,9 @@ for idx,img in enumerate(g_test_images) :
     if go_label == ai_label:
         cv2.imwrite('test/o/{}_{}_{}.jpg'.format(go_label,ai_label,idx), img) 
     else : 
-        cv2.imwrite(f'test/x/{go_label}_{ai_label}_{idx}.jpg',img) 
+        cv2.imwrite(f'test/x/{go_label}_{ai_label}_{idx}.jpg',img)
+
+
 
 
 

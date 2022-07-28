@@ -10,3 +10,7 @@
 *pyc
 *jpg
 *TTF
+*npz
+*psq
+*.class
+HELLO_AI/day11/*

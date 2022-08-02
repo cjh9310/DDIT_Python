@@ -36,13 +36,13 @@ class DaoGibo:
                     line.append(-1)
             gibo_ais_pp.append(line)
         
-        line_trash=[]
-        for i in range(400):
-            line_trash.append(-1)
-        gibo_ais_pp.append(line_trash)
-        
-        
-        anss.append(399)
+        # line_trash=[]
+        # for i in range(400):
+        #     line_trash.append(-1)
+        # gibo_ais_pp.append(line_trash)
+        #
+        #
+        # anss.append(399)
         gibo_ais_pp_n = np.array(gibo_ais_pp)
         anss_n = np.array(anss)
         print(gibo_ais_pp_n.shape)
@@ -51,8 +51,8 @@ class DaoGibo:
                
         print(gibo_ais_pp_n)
         print(anss_n)
-        np.save("omok_train",gibo_ais_pp_n)
-        np.save("omok_answer",anss_n)
+        np.save("omok_train2",gibo_ais_pp_n)
+        np.save("omok_answer2",anss_n)
         
 
         return None;

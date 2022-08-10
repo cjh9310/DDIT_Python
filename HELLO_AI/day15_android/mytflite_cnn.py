@@ -28,8 +28,6 @@ def show_sample(images, labels, sample_count=25):
 mnist = keras.datasets.mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-print(train_images.shape)
-
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 
@@ -38,10 +36,20 @@ show_sample(train_images, ['Label: %s' % label for label in train_labels])
 
 
 model = keras.Sequential([
+    
+    keras.layers.Reshape(target_shape=(28, 28, 1)),
+    keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation=tf.nn.relu),
+    keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation=tf.nn.relu),
+    keras.layers.MaxPooling2D(pool_size=(2, 2)),
+    keras.layers.Dropout(0.25),
     keras.layers.Flatten(input_shape=(28, 28)),
     keras.layers.Dense(128, activation=tf.nn.relu),
+    keras.layers.Dropout(0.5),
+    
     keras.layers.Dense(10)
 ])
+
+
 
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
@@ -63,7 +71,7 @@ show_sample(test_images,
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
-f = open('mnist.tflite', "wb")
+f = open('mnist_cnn.tflite', "wb")
 f.write(tflite_model)
 f.close()
 

@@ -10,7 +10,7 @@ train_images_a = [
         [0,0], 
         [0,1],
         [1,1],
-        [1,0],
+        [1,0]
         
 ]
 train_labels_a = [

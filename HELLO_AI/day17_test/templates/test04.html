@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myrandom(){
+	document.getElementsByClassName('mytxt')[0].value = parseInt(Math.random()*45+1);
+	document.getElementsByClassName('mytxt')[1].value = parseInt(Math.random()*45+1);
+	document.getElementsByClassName('mytxt')[2].value = parseInt(Math.random()*45+1);
+	document.getElementsByClassName('mytxt')[3].value = parseInt(Math.random()*45+1);
+	document.getElementsByClassName('mytxt')[4].value = parseInt(Math.random()*45+1);
+	document.getElementsByClassName('mytxt')[5].value = parseInt(Math.random()*45+1);
+}
+
+
+</script>
+</head>
+<body>
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+<input type="text" style="width:20px;" class="mytxt" value="__" />
+
+<input type="button" value = "lotto" onclick="myrandom()"/>
+
+</body>
+</html>

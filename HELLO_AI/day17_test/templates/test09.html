@@ -3,67 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-function myclick() {
-	var a = document.getElementsByTagName("input");
-	for(var i = 0 ; i < a.length ; i++){
-        var inputTag = a[i];
-        alert(inputTag.value);
-    }
-} 
+<script src="jquery-3.6.0.min.js"></script>
 
-</script>
 </head>
 <body>
-<table border="1px">
-	<tr>
-		<td colspan="3">
-			<input type="text" style="width : 120px" value="" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="button" style="width : 40px" value="1" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="2" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="3" onclick="myclick()" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="button" style="width : 40px" value="4" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="5" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="6" onclick="myclick()" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="button" style="width : 40px" value="7" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="8" onclick="myclick()" />
-		</td>
-		<td>
-			<input type="button" style="width : 40px" value="9" onclick="myclick()" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="button" style="width : 40px" value="0" onclick="myclick()" />
-		</td>
-		<td colspan="2">
-			<input type="button" style="width : 80px" value="call" onclick="mycall()" />
-		</td>
-	</tr>
-	
-</table>
 
+	<table border="1px;">
+		<tr>
+			<td colspan="3"><input type="text" style="width: 120px" value=""></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" style="width: 40px" value="1"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="2"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="3"
+				onclick="myclick(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" style="width: 40px" value="4"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="5"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="6"
+				onclick="myclick(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" style="width: 40px" value="7"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="8"
+				onclick="myclick(event)"></td>
+			<td><input type="button" style="width: 40px" value="9"
+				onclick="myclick(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" style="width: 40px" value="0"
+				onclick="myclick(event)"></td>
+			<td colspan="2"><input type="button" style="width: 85px"
+				value="call" onclick="mycall()"></td>
+		</tr>
+
+
+
+
+
+	</table>
+
+	<script>
+	var digit = "";
+	var ta = document.querySelector('input[type="text"]');
+		function myclick(e) {
+			
+			ta.value += e.target.value;
+			
+		}
+		
+		function mycall(){
+			alert("calling " + ta.value)
+		}
+	</script>
 </body>
 </html>

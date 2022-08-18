@@ -6,9 +6,9 @@ from flask.json import jsonify
 app = Flask(__name__,static_url_path='')
 
 @app.route('/')
-@app.route('/test09')
+@app.route('/test07')
 def omok():
-    return render_template('test09.html')
+    return render_template('test07.html')
 
 
 

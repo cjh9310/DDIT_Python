@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick() {
+	var first
+	var last
+	var text= "";
+    var obj_length = document.getElementsByName("radiof").length;
+
+    for (var i=0; i<obj_length; i++) {
+        if (document.getElementsByName("radiof")[i].checked == true) {
+            first = document.getElementsByName("radiof")[i].value;
+        }
+    }
+    var obj_length2 = document.getElementsByName("radiol").length;
+
+    for (var i=0; i<obj_length2; i++) {
+        if (document.getElementsByName("radiol")[i].checked == true) {
+            last = document.getElementsByName("radiol")[i].value;
+        }
+    }
+    
+    for (let i = first-1; i < last; i++) {
+    	  for (let j = 0; j <= i; j++) {
+    		  text+= "*";
+    		  document.getElementById('myta').value = text ;
+    	  }
+    	  text += "\n";
+    	  document.getElementById('myta').value = text;
+    	}
+    
+}
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫 별수: </td>
+		<td>
+			<input type="radio" value="2" name="radiof">2
+			<input type="radio" value="3" name="radiof">3
+			<input type="radio" value="4" name="radiof">4
+			<input type="radio" value="5" name="radiof">5
+		</td>
+	</tr>
+	<tr>
+		<td>끝 별수: </td>
+		<td>
+			<input type="radio" value="6" name="radiol">6
+			<input type="radio" value="7" name="radiol">7
+			<input type="radio" value="8" name="radiol">8
+			<input type="radio" value="9" name="radiol">9
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" onclick="myclick()"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<textarea id="myta" rows="10" cols="10"></textarea>
+		</td>
+	</tr>
+	
+	
+	
+	
+</table>
+
+</body>
+</html>

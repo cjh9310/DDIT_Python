@@ -15,6 +15,7 @@ table {
 </style>
 <script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+var flagWb = true;
 var arr2D = [
 	[0,1,0,0,0, 0,0,0,0,0],
 	[2,1,0,0,0, 0,0,0,0,0],
@@ -40,7 +41,27 @@ function myinit(){
 }
 function myclick(obj){
 	console.log(obj.title);
+	var str_ij = obj.title;
+	var arr_ij = str_ij.split(",");
+	var i =parseInt(arr_ij[0]);
+	var j =parseInt(arr_ij[1]);
+	// 중복 자리 잠금
+	if(arr2D[i][j] > 0){
+		return;
+	}
+	// 흰돌 검은돌 돌아가면서 
+	if(flagWb){
+		arr2D[i][j] = 1; // 흰돌
+	}else{
+		arr2D[i][j] = 2; // 검돌
+	}
+	
 	myrender();
+	flagWb = !flagWb;
+	
+	
+	
+	
 }
 
 function myrender(){

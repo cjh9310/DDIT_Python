@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-function myclick(){
-	var num1 = document.getElementById('mya');
-	var num2 = document.getElementById('myb');
-	var result = parseInt(num1.value) + parseInt(num2.value);  // pasreInt안에 .value가 없으면 nan오류가 뜸
-	
-	document.getElementById('myc').value= result;
-	
+function myadd(){
+	var a =$("#mya").val();
+	var aa = parseInt(a);
+	var b =$("#myb").val();
+	var bb = parseInt(b);
+	$("#myc").val(aa + bb);
 }
+$(document).ready(function(){
+//	$("#btn").click(mydouble);
+	$("#btn").bind("click",myadd);
+});
+
 
 
 </script>
@@ -20,7 +25,7 @@ function myclick(){
 <input type="text" style="width:20px;" id="mya" value="1" />
 +
 <input type="text" style="width:20px;" id="myb" value="2" />
-<input type="button" value = "=" onclick="myclick()"/>
+<input type="button" value = "=" id="btn"/>
 <input type="text" style="width:20px;" id="myc" value="" />
 </body>
 </html>

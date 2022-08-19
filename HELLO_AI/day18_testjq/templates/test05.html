@@ -3,24 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 function myclick() {
+	
+	
 	var rnd = Math.random();
-	var com;
-	var mine = document.getElementById('txtMine').value;
+	var com="";
+	var result="";
+	var mine = $("#txtMine").val();
 	if(rnd < 0.5){
-		document.getElementById('txtCom').value = "짝"
 		com = "짝"
 	}else{
-		document.getElementById('txtCom').value = "홀"
 		com ="홀"
 	}
 	if(com == mine){
-		document.getElementById('txtResult').value = "승리";
+		result = "승리";
 	}else{
-		document.getElementById('txtResult').value = "패배";
+		result = "패배";
 	}
-} 
+	$("#txtCom").val(com)
+	$("#txtResult").val(result)
+}
+
+
+$(document).ready(function(){
+	$("#btn").bind("click",myclick);
+	$("#txtMine").bind("keypress",function(e){
+		if(e.which == 13){
+			myclick();
+		}
+	});
+});
+
 
 </script>
 </head>
@@ -46,7 +61,7 @@ function myclick() {
 	</tr>
 	<tr>
 		<td colspan="2">
-			<input type="button" value="게임하기" onclick="myclick()"/>
+			<input type="button" value="게임하기" id="btn"/>
 		</td>
 	</tr>
 </table>

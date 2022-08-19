@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 function myclick() {
 	var rnd = Math.random();
-	var com;
-	var mine = document.getElementById('txt_mine').value;
+	var com ="";
+	var result = "";
+	var mine = $("#txt_mine").val();
 	if(rnd < 0.36){
-		document.getElementById('txt_com').value = "가위"
 		com = "가위"
 	}else if(rnd < 0.66){
-		document.getElementById('txt_com').value = "바위"
 		com ="바위"
 	}else{
-		document.getElementById('txt_com').value = "보"
 		com ="보"
 	}
+	console.log(mine);
 	if(com == mine){
-		document.getElementById('txt_result').value = "무승부";
+		result = "무승부";
 	}else if (com =="바위" && mine == "가위" || com =="가위" && mine == "보" || com =="보" && mine == "바위"){
-		document.getElementById('txt_result').value = "컴퓨터 승리";
+		result = "컴퓨터 승리";
 	}else{
-		document.getElementById('txt_result').value = "사람 승리";
+		result = "사람 승리";
 	}
-	
+	$("#txt_com").val(com);
+	$("#txt_result").val(result);
 } 
-
+$(document).ready(function(){
+	$("#btn").bind("click",myclick);
+});
 </script>
 </head>
 <body>
@@ -52,7 +55,7 @@ function myclick() {
 	</tr>
 	<tr>
 		<td colspan="2">
-			<input type="button" value="게임하기" onclick="myclick()"/>
+			<input type="button" value="게임하기" id="btn"/>
 		</td>
 	</tr>
 </table>

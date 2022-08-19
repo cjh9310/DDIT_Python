@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 function myclick() {
 	/*var dan = document.getElementById('mysel');
@@ -21,20 +22,19 @@ function myclick() {
 		
 	document.getElementById('myta').value = text; */
 /*	----------------------------------------------------- */
-	var objSel = document.querySelector("#mysel");
-	var objTa = document.querySelector("#myta");
 	var txt ="";
-	var dan = objSel.options[objSel.selectedIndex].value;
+	var dan = $("#mysel option:selected").val()
 	var idan = parseInt(dan);
-	
+	console.log(idan);
 	for(var i=1; i<=9; i++){
 		txt += idan+"*"+i+"="+(i*idan)+"\n";
 	}
-	objTa.value = txt;
-	
-	
-	
+	$("#myta").val(txt);
+
 } 
+$(document).ready(function(){
+	$("#btn").bind("click",myclick);
+});
 
 </script>
 </head>
@@ -58,7 +58,7 @@ function myclick() {
 	
 	<tr>
 		<td colspan="2">
-			<input type="button" value="출력하기" onclick="myclick()"/>
+			<input type="button" value="출력하기" id="btn"/>
 		</td>
 	</tr>
 	<tr>

@@ -33,6 +33,10 @@ function myclick() {
     	}
     
 }
+$(document).ready(function(){
+	$("#btn").bind("click",myclick);
+});
+
 </script>
 </head>
 <body>
@@ -59,7 +63,7 @@ function myclick() {
 	
 	<tr>
 		<td colspan="2">
-			<input type="button" value="출력하기" onclick="myclick()"/>
+			<input type="button" value="출력하기" id="btn"/>
 		</td>
 	</tr>
 	<tr>

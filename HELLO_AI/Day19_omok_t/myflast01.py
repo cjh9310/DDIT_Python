@@ -5,13 +5,18 @@ from flask.json import jsonify
 
 app = Flask(__name__,static_url_path='')
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+
 @app.route('/')
-@app.route('/omok4_20')
+@app.route('/omok')
 def omok():
-    return render_template('omok4_20.html')
+    return render_template('omok4_20_teacher.html')
 
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0")
     

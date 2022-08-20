@@ -18,8 +18,6 @@ def ajaxmod():
     return jsonify({'i':0,'j':1})
 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=5001, host="0.0.0.0")
     

@@ -73,3 +73,4 @@ if __name__ == '__main__':
     ao = AaoOmok()
     i,j = ao.mypredict(arr2D,False)
     print(i,j)
+    

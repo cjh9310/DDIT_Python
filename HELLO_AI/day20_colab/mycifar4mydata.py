@@ -8,11 +8,13 @@ from keras import models, layers, datasets
 # 라벨 0번쨰는 airplane
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
-# 데이터 
-(train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 
 
- 
+train_images = np.load("train_images.npy")
+train_labels = np.load("train_labels.npy")
+test_images = np.load("test_images.npy")
+test_labels = np.load("test_labels.npy")
+
 print("Train samples:", train_images.shape, train_labels.shape)
 print("Test samples:", test_images.shape, test_labels.shape)
  
@@ -39,9 +41,11 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
  
 model.fit(train_images, train_labels, epochs=10)
  
+model.save("mycifar.h5")
+
+# 검증
 test_loss, test_acc = model.evaluate(test_images, test_labels)
- 
-print('Test accuracy:', test_acc)
+
  
 predictions = model.predict(test_images)
  

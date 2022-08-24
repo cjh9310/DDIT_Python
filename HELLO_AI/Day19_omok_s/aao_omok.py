@@ -4,7 +4,7 @@ from keras.utils import to_categorical
 
 class AaoOmok:
     def __init__(self):
-        self.model = tf.keras.models.load_model('alphao4.h5')
+        self.model = tf.keras.models.load_model('alphao5.h5')
         
     def mypredict(self,arr2D,flagWb):
         myarr2D =  arr2D.copy()

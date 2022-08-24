@@ -4,23 +4,8 @@ from keras import layers
 from keras.utils import to_categorical
 import numpy as np
 
-ti1 = np.load("omok_train5.npy")
-ti2 = np.load("omok_train5.npy")
-ti3 = np.load("omok_train5.npy")
-ti4 = np.load("omok_train5.npy")
-ti5 = np.load("omok_train5.npy")
-
-tl1 = np.load("omok_answer5.npy")
-tl2 = np.load("omok_answer5.npy")
-tl3 = np.load("omok_answer5.npy")
-tl4 = np.load("omok_answer5.npy")
-tl5 = np.load("omok_answer5.npy")
-
-
-train_images = np.concatenate([ti1,ti2,ti3,ti4,ti5,ti1,ti2])
-train_labels = np.concatenate([tl1,tl2,tl3,tl4,tl5,tl1,tl2])
-
-np.save("train_images",train_images)
+train_images = np.load("omok_train5.npy")
+train_labels = np.load("omok_answer5.npy")
 
 print(train_images.shape)
 print(train_labels.shape)

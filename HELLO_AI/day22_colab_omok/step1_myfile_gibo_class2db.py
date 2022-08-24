@@ -1,6 +1,6 @@
 import numpy as np
+from day21_gpu_omok.dao_gibo import DaoGibo
 import os
-from day22_colab_omok.dao_gibo import DaoGibo
 
 
 class RaoGibo:

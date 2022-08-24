@@ -3,8 +3,7 @@ from flask.globals import request
 from flask.templating import render_template
 from flask.json import jsonify
 from flask_cors import CORS
-from Day19_omok_s.aao_omok import AaoOmok
-
+from day19_omok_s.aao_omok import AaoOmok
 
 
 app = Flask(__name__,static_url_path='')

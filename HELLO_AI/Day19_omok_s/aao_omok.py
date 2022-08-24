@@ -4,7 +4,7 @@ from keras.utils import to_categorical
 
 class AaoOmok:
     def __init__(self):
-        self.model = tf.keras.models.load_model('alphao.h5')
+        self.model = tf.keras.models.load_model('alphao4.h5')
         
     def mypredict(self,arr2D,flagWb):
         myarr2D =  arr2D.copy()
@@ -22,7 +22,7 @@ class AaoOmok:
                     elif myarr2D_n[i][j] == 2:
                         myarr2D_n[i][j] = 1
         
-        train_images = np.reshape(myarr2D_n,(1,400))
+        train_images = np.reshape(myarr2D_n,(1,20*20))
         predict_result = self.model.predict(train_images)
         
         for i in range(20):

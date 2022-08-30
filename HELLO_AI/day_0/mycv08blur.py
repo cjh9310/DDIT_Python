@@ -8,4 +8,3 @@ cv2.imshow('img1', dst)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-

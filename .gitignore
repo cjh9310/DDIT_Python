@@ -18,3 +18,5 @@ HELLO_AI/day11/*
 *.npy
 *.mp4
 HELLO_AI2/day03/record/*
+*wav
+*mp3

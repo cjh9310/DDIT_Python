@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import datasets, models, layers
 
-labels = [ "가", "나", "다", "라", "마"]
+labels = [ "이상권", "김유미", "박수현", "박성우", "최재혁", "양형주"]
 
 train_images = np.load("train_image.npy")
 train_labels = np.load("train_label.npy")
@@ -24,17 +24,17 @@ model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 model.add(layers.Flatten())
 model.add(layers.Dense(64, activation='relu'))
-model.add(layers.Dense(5, activation='softmax'))
+model.add(layers.Dense(6, activation='softmax'))
  
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
  
 model.fit(train_images, train_labels, epochs=10)
-model.save("ganada.h5")
+model.save("myvoice.h5")
  
 
  
 predictions = model.predict(train_images)
 
-for i in range(100):
+for i in range(10):
     print(i, np.argmax(predictions[i]))
  

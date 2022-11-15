@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+<style type="text/css">
+.mytd input{
+	font-size: 2em;
+	width: 50px;
+	height: 50px;
+}
+.mycall input{
+	font-size: 2em;
+	width: 105px;
+	height: 50px;
+}
+.mydisp input{
+	width: 160px;
+	height: 30px;
+	font-size: 1em;
+	text-align: right;
+
+}
+
+</style>
+<script type="text/javascript">
+	function myclick(obj) {
+		var obj_it = document.querySelector("#it");
+		var str_new = obj.value;
+		var str_old = obj_it.value;
+		
+		obj_it.value = str_old + str_new;
+	}	
+	function mycall(){
+		var obj_it = document.querySelector("#it");
+		var tel = obj_it.value;
+		alert("calling\n"+tel);
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="3" class="mydisp">
+				<input type="text" id="it" value="" />
+			</td>
+		</tr>
+		<tr>
+			<td class="mytd">
+				<input type="button" value="1" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="2" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="3" onclick="myclick(this)"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="mytd">
+				<input type="button" value="4" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="5" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="6" onclick="myclick(this)"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="mytd">
+				<input type="button" value="7" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="8" onclick="myclick(this)"/>
+			</td>
+			<td class="mytd">
+				<input type="button" value="9" onclick="myclick(this)"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="mytd">
+				<input type="button" value="0" onclick="myclick(this)"/>
+			</td>
+			<td colspan="2" class="mycall">
+				<input type="button" value="call" onclick="mycall()"/>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

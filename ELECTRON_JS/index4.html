@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+<style type="text/css">
+.it{
+	width: 40px;
+}
+#ib{
+	width: 80px;
+}
+</style>
+<script type="text/javascript">
+	function myclick() {
+		var itMine	= document.querySelector("#itMine");
+		var itCom	= document.querySelector("#itCom");
+		var itResult= document.querySelector("#itResult");
+		
+		var com		= "";
+		var mine	= itMine.value;
+		var result	= "";
+		
+		var rnd = Math.random();
+		if(rnd > 0.5){
+			com = "홀";
+		} else {
+			com = "짝";
+		}
+		
+		if(com == mine){
+			result = "이김";
+		} else {
+			result = "짐";
+		}
+		
+		itCom.value		= com;
+		itResult.value	= result;
+		
+		
+	}	
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td>나:</td>
+		<td><input type="text" class="it" id="itMine" /></td>
+	</tr>
+	<tr>
+		<td>컴:</td>
+		<td><input type="text" class="it" id="itCom" /></td>
+	</tr>
+	<tr>
+		<td>결과:</td>
+		<td><input type="text" class="it" id="itResult" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" id="ib" value="click" onclick="myclick()" />
+		</td>
+	</tr>		
+</table>
+</body>
+</html>

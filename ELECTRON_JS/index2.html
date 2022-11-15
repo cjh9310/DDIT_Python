@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+<script type="text/javascript">
+	function myclick() {
+		var obj_it= document.querySelector("#it");
+		var a = parseInt(obj_it.value);
+		a--;
+		obj_it.value = a;
+	}	
+</script>
+</head>
+<body>
+	<input type="text" id="it" value="100" />
+	<input type="button" value="decrease" onclick="myclick()" />
+</body>
+</html>

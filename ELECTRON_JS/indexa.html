@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>strike</title>
+<script type="text/javascript">
+	var arr3 = [];
+	
+	function myinit(){
+		setArr3();
+		console.log("arr3",arr3);
+	}
+	
+	function mykey(e){
+		if(e.key == 'Enter'){
+			myclick();
+		}
+	}
+	
+	function myclick(){
+		var obj_ta = document.querySelector("#ta");
+		var obj_ipt = document.querySelector("#ipt");
+		var str_try = obj_ipt.value;
+		if(str_try.length !=3){
+			obj_ipt.value="";
+			return;
+		}
+		
+		var str_old = obj_ta.value;
+		var str_new = getStrikeBall(str_try);
+		
+		var str_line = `${str_try} ${str_new}\n`;
+		
+		obj_ta.value = str_line + str_old;
+		obj_ipt.value = "";
+		
+		if(str_new == "3S0B"){
+			alert("잘했어요.");
+		}
+		
+
+	}
+	function getStrikeBall(str_try){
+		var s = 0;
+		var b = 0;
+		var t0 = parseInt(str_try.substring(0,1));
+		var t1 = parseInt(str_try.substring(1,2));
+		var t2 = parseInt(str_try.substring(2,3));
+
+		if(t0 == arr3[0]) s++;
+		if(t1 == arr3[1]) s++;
+		if(t2 == arr3[2]) s++;
+		
+		if((t0 == arr3[1]) || (t0 == arr3[2])) b++;
+		if((t1 == arr3[0]) || (t1 == arr3[2])) b++;
+		if((t2 == arr3[0]) || (t2 == arr3[1])) b++;
+		
+		return `${s}S${b}B`;
+		
+	}
+	
+	function setArr3(){
+		var arr9 = [1,2,3,4,5,6,7,8,9];
+		
+		for(var i=0;i<1000;i++){
+			var rnd = parseInt(Math.random()*9);
+			var a = arr9[rnd];
+			var b = arr9[0];
+			arr9[0]=a;
+			arr9[rnd]=b;			
+		}	
+		arr3.push(arr9[0]);
+		arr3.push(arr9[1]);
+		arr3.push(arr9[2]);
+	}
+	
+
+</script>
+
+<style type="text/css">
+#ipt{
+	width: 40px;
+}
+.btn{
+	width:100%;
+}
+.tbl{
+	border: 1px solid gray;
+}
+</style>
+</head>
+<body onload="myinit()" >
+<table class="tbl">
+	<tr>	
+		<td>야구존</td>
+		<td>
+			<input class="ipt" type="text" id="ipt" onkeydown="mykey(event)" />
+		</td>
+	</tr>
+	<tr>	
+		<td colspan="2" >
+			<input class="btn" type="button" value="맞춰보기" onclick="myclick()" />
+		</td>
+	</tr>
+	<tr>	
+		<td colspan="2" >
+			<textarea id="ta" rows="10" cols="13"></textarea>
+		</td>
+	</tr>
+
+</table>
+
+</body>
+</html>

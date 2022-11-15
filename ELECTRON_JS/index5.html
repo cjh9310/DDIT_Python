@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+<style type="text/css">
+.it{
+	width: 50px;
+}
+#ib{
+	width: 100%;
+}
+</style>
+<script type="text/javascript">
+	function myclick() {
+		var objTa	= document.querySelector("#ta");
+		var objItDan= document.querySelector("#itDan");
+		var idan = parseInt(objItDan.value);
+		var text = "";
+		
+		text += idan+"*"+1+"="+(idan*1)+"\n";
+		text += idan+"*"+2+"="+(idan*2)+"\n";
+		text += idan+"*"+3+"="+(idan*3)+"\n";
+		text += idan+"*"+4+"="+(idan*4)+"\n";
+		text += idan+"*"+5+"="+(idan*5)+"\n";
+		text += idan+"*"+6+"="+(idan*6)+"\n";
+		text += idan+"*"+7+"="+(idan*7)+"\n";
+		text += idan+"*"+8+"="+(idan*8)+"\n";
+		text += idan+"*"+9+"="+(idan*9)+"\n";
+		
+		objTa.value = text;
+
+	}	
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td>단수:</td>
+		<td><input type="text" class="it" id="itDan" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" id="ib" value="출력하기" onclick="myclick()" />
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2">
+			<textarea id="ta" rows="10" cols="10"></textarea>
+		</td>
+	</tr>	
+</table>
+
+</body>
+</html>

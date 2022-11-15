@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World!</title>
+
+<style type="text/css">
+td{
+	border: 1px solid darkgray;
+	width: 50px;
+}
+
+.myib input{
+	width: 100%;
+}
+
+</style>
+<script type="text/javascript">
+	function myclick() {
+		var mytds = document.querySelectorAll(".mytd");
+		console.log(mytds);
+		var arr45 = [
+			1,2,3,4,5,		6,7,8,9,10,
+			11,12,13,14,15,	16,17,18,19,20,
+			21,22,23,24,25,	26,27,28,29,30,
+			31,32,33,34,35,	36,37,38,39,40,
+			41,42,43,44,45
+		];
+		var arr6 = [];
+		while(true){
+			var rnd = parseInt(Math.random()*45);
+			if(arr45[rnd]>0){
+				arr6.push(arr45[rnd]);
+				arr45[rnd] = -1;
+			}
+			if(arr6.length >= 6){
+				break;
+			}
+		}
+		
+		mytds[0].innerHTML = arr6[0];
+		mytds[1].innerHTML = arr6[1];
+		mytds[2].innerHTML = arr6[2];
+		mytds[3].innerHTML = arr6[3];
+		mytds[4].innerHTML = arr6[4];
+		mytds[5].innerHTML = arr6[5];
+		
+		
+	}	
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td class="mytd">&nbsp;</td>
+			<td class="mytd">&nbsp;</td>
+			<td class="mytd">&nbsp;</td>
+			<td class="mytd">&nbsp;</td>
+			<td class="mytd">&nbsp;</td>
+			<td class="mytd">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="myib" colspan="6">
+				<input type="button" id="btn" value="click" onclick="myclick()" />
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
